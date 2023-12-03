@@ -57,19 +57,6 @@ public class UserController {
         UserResponse.LoginDTO responseDTO = userService.로그인(requestDTO);
         return ResponseEntity.ok()
                 .header("Authorization", responseDTO.accessToken())
-                .header("X-Refresh-Token", responseDTO.refreshToken())
-                .body(ApiUtil.success(responseDTO));
-    }
-
-    // access와 refresh를 함께 전송해야 한다.
-    @PostMapping("/refresh/login")
-    public ResponseEntity<?> refreshLogin(HttpServletRequest request) {
-        String accessToken = request.getHeader("Authorization");
-        String refreshToken = request.getHeader("X-Refresh-Token");
-        UserResponse.LoginDTO responseDTO = userService.리플래시로그인(accessToken, refreshToken);
-        return ResponseEntity.ok()
-                .header("Authorization", responseDTO.accessToken())
-                .header("X-Refresh-Token", responseDTO.refreshToken())
                 .body(ApiUtil.success(responseDTO));
     }
 

@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import shop.mtcoding.springblogriver._core.error.exception.Exception401;
 import shop.mtcoding.springblogriver.user.User;
